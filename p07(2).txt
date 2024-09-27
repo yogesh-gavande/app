@@ -1,0 +1,25 @@
+DisplayActivity.java
+.........................................................................................
+package com.example.intentdemo;
+
+import android.os.Bundle;
+import android.widget.TextView;
+import androidx.appcompat.app.AppCompatActivity;
+
+public class DisplayActivity extends AppCompatActivity {
+
+    private TextView textViewDisplay;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_display);
+
+        textViewDisplay = findViewById(R.id.textViewDisplay);
+
+        String name = getIntent().getStringExtra("NAME");
+        String password = getIntent().getStringExtra("PASSWORD");
+
+        textViewDisplay.setText("Name: " + name + "\nPassword: " + password);
+    }
+}
